@@ -1,0 +1,12 @@
+{% extends "index.html.twig" %}
+
+{% block body %}
+    {% include "_navbar.html.twig" %}
+    <main class="m-auto row text-center justify-content-center">
+    <p>Cliquez sur un type pour voir tous les pokemons de ce type</p>
+    {% for type in types %}
+        <button class="btn col-3 m-1" style="background-color: #{{ type.getColor() }} !important;"><strong><a class="text-center text-white" href="/types/{{ type.getName() }}" style="text-decoration: none !important;">{{ type.getName() }}</a></strong></button>
+    {% endfor %}
+    
+    </main>    
+{% endblock %}

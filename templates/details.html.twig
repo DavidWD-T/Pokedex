@@ -1,0 +1,56 @@
+{% extends "index.html.twig" %}
+
+{% block body %}
+    {% include "_navbar.html.twig" %}
+    <main class="mx-auto d-flex-block">
+    <h2 class="text-white text-center my-5"> Details de {{ pokemon.getNom() }}</h2>
+        <section class="row justify-content-center align-items-start mb-4">
+            <img  class="col-5 mt-2" src="/img/{{ pokemon.getNumero() }}.png" alt="{{ pokemon.getNom() }}">
+            <div class="col-5" >
+                <h3 class="font-weight-bold text-white mb-4">#{{ pokemon.getNumero() }} {{ pokemon.getNom() }}</h3>
+                <div class="mb-3">
+                {% for type in types %}
+                <button class="btn text-white" style="background-color: #{{ type.getColor() }}"><strong>{{ type.getName() }}</strong></button>
+                    
+                {% endfor %}
+                </div>
+                <strong><p class="text-white h3">Statistiques</p></strong>
+                <div>
+                    <strong>PV {{ pokemon.getPv() }}</strong> 
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{ pokemon.getPv() }}%" aria-valuenow="{{ pokemon.getPv() }}" aria-valuemin="0" aria-valuemax="100"></div></div> 
+                </div>
+
+                <div>
+                    <strong>Attaque {{ pokemon.getAttaque() }}</strong> 
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{ pokemon.getAttaque() }}%" aria-valuenow="{{ pokemon.getAttaque() }}" aria-valuemin="0" aria-valuemax="100"></div></div> 
+                </div>
+
+                <div>
+                    <strong>Defense {{ pokemon.getDefense() }}</strong> 
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{ pokemon.getDefense() }}%" aria-valuenow="{{ pokemon.getDefense() }}" aria-valuemin="0" aria-valuemax="100"></div></div> 
+                </div>
+
+                <div>
+                    <strong>Attaque Spé. {{ pokemon.getAttaqueSpe() }}</strong> 
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{ pokemon.getAttaqueSpe() }}%" aria-valuenow="{{ pokemon.getAttaqueSpe() }}" aria-valuemin="0" aria-valuemax="100"></div></div> 
+                </div>
+
+                <div>
+                    <strong>Defense Spé. {{ pokemon.getDefenseSpe() }}</strong> 
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{ pokemon.getDefenseSpe() }}%" aria-valuenow="{{ pokemon.getDefenseSpe() }}" aria-valuemin="0" aria-valuemax="100"></div></div> 
+                </div>
+
+                <div>
+                    <strong>Vitesse {{ pokemon.getVitesse() }}</strong> 
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{ pokemon.getVitesse() }}%" aria-valuenow="{{ pokemon.getVitesse() }}" aria-valuemin="0" aria-valuemax="100"></div></div> 
+                </div>
+            </div>
+        </section>
+        <div class="text-center">
+            <button class="btn">
+                <strong><a class="text-white text-center h4" href="/" style="text-decoration: none;">Revenir a liste</a></strong>  
+            </button>
+            
+        </div>
+    </main>    
+{% endblock %}

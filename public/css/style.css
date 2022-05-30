@@ -1,0 +1,12 @@
+#homeCard{
+    background-color: #8a211c !important;
+    margin: 8px 8px 2px 2px;
+    border-radius: 10px !important;
+}
+body{
+    background-color: #a84e4a !important;
+    margin: auto !important;
+}
+header{
+    border-radius: 10px !important;
+}

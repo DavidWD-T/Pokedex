@@ -1,0 +1,22 @@
+{% extends "index.html.twig" %}
+
+{% block body %}
+    {% include "_navbar.html.twig" %}
+
+    {% for pokemon in pokemons %}
+        
+    {% endfor %}
+    <main class=" mx-auto d-flex flex-wrap justify-content-center w-100 row">
+    {% for pokemon in pokemons %}
+        <div id="homeCard" class=" col-3 m-1" style="">
+            <a href="/details/{{ pokemon.getNumero() }}" style="text-decoration: none !important;">
+                <img src="/img/{{ pokemon.getNumero() }}.png" class="card-img-top p-3" alt=" {{ pokemon.getNom() }} ">
+                <div class="">
+                    <strong><p class="card-text text-center text-light border-0" >#{{ pokemon.getNumero() }} {{ pokemon.getNom() }}</p></strong>      
+                </div>
+            </a>
+            
+        </div>
+    {% endfor %}
+    </main>    
+{% endblock %}
